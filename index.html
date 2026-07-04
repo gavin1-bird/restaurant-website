@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>味来餐厅 - 正宗家常菜，家的味道</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <!-- ========== 导航栏 ========== -->
+  <nav class="navbar">
+    <div class="container">
+      <a href="#" class="logo">🍽️ 味来餐厅</a>
+      <ul class="nav-links">
+        <li><a href="#home">首页</a></li>
+        <li><a href="#about">关于我们</a></li>
+        <li><a href="#menu">菜品推荐</a></li>
+        <li><a href="#gallery">环境展示</a></li>
+        <li><a href="#contact">联系我们</a></li>
+      </ul>
+      <a href="#reserve" class="btn btn-nav">立即预约</a>
+    </div>
+  </nav>
+
+  <!-- ========== 首页大图 ========== -->
+  <section id="home" class="hero">
+    <div class="hero-overlay"></div>
+    <div class="hero-content">
+      <h1>地道家常菜，用心做好每一餐</h1>
+      <p>传承三代人的味道，让您在城市里找到家的感觉</p>
+      <div class="hero-buttons">
+        <a href="#menu" class="btn btn-primary">查看菜单</a>
+        <a href="#reserve" class="btn btn-outline">预约座位</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== 关于我们 ========== -->
+  <section id="about" class="about section">
+    <div class="container">
+      <div class="section-header">
+        <h2>关于我们</h2>
+        <p class="section-subtitle">始于1998，二十余年只为做好一道菜</p>
+      </div>
+      <div class="about-grid">
+        <div class="about-text">
+          <h3>味来餐厅的故事</h3>
+          <p>味来餐厅创立于1998年，由创始人张师傅从一间不足30平米的小店起步。二十多年来，我们坚持选用新鲜食材，传承经典烹饪技艺，为每一位顾客带来最地道的家常美味。</p>
+          <p>我们相信，好的食物不需要过多的修饰——新鲜的食材、恰当的烹饪、用心的服务，就是一道好菜的全部秘诀。</p>
+          <div class="about-stats">
+            <div class="stat">
+              <span class="stat-number">28+</span>
+              <span class="stat-label">年经营历史</span>
+            </div>
+            <div class="stat">
+              <span class="stat-number">50+</span>
+              <span class="stat-label">精选菜品</span>
+            </div>
+            <div class="stat">
+              <span class="stat-number">10,000+</span>
+              <span class="stat-label">满意顾客</span>
+            </div>
+          </div>
+        </div>
+        <div class="about-image">
+          <div class="image-placeholder">📸 餐厅外景</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== 菜品推荐 ========== -->
+  <section id="menu" class="menu section">
+    <div class="container">
+      <div class="section-header">
+        <h2>招牌菜品</h2>
+        <p class="section-subtitle">每一道都是精心烹制的拿手好菜</p>
+      </div>
+
+      <!-- 菜品分类标签 -->
+      <div class="menu-tabs">
+        <button class="menu-tab active" data-category="all">全部</button>
+        <button class="menu-tab" data-category="signature">招牌菜</button>
+        <button class="menu-tab" data-category="main">主菜</button>
+        <button class="menu-tab" data-category="soup">汤品</button>
+        <button class="menu-tab" data-category="dessert">小吃甜品</button>
+      </div>
+
+      <!-- 菜品列表 -->
+      <div class="menu-grid">
+        <!-- 招牌菜 -->
+        <div class="menu-item" data-category="signature">
+          <div class="menu-item-img img-red-braised"></div>
+          <div class="menu-item-info">
+            <h3>红烧肉</h3>
+            <p class="menu-item-desc">精选五花肉，慢炖两小时，肥而不腻入口即化</p>
+            <span class="menu-item-price">¥48</span>
+          </div>
+        </div>
+        <div class="menu-item" data-category="signature">
+          <div class="menu-item-img img-sweet-sour"></div>
+          <div class="menu-item-info">
+            <h3>糖醋里脊</h3>
+            <p class="menu-item-desc">外酥里嫩，酸甜适中，老少皆宜的经典之选</p>
+            <span class="menu-item-price">¥42</span>
+          </div>
+        </div>
+        <div class="menu-item" data-category="signature">
+          <div class="menu-item-img img-fish"></div>
+          <div class="menu-item-info">
+            <h3>清蒸鲈鱼</h3>
+            <p class="menu-item-desc">每日鲜活的鲈鱼，清蒸保留最原始的鲜美</p>
+            <span class="menu-item-price">¥68</span>
+          </div>
+        </div>
+
+        <!-- 主菜 -->
+        <div class="menu-item" data-category="main">
+          <div class="menu-item-img img-kungpao"></div>
+          <div class="menu-item-info">
+            <h3>宫保鸡丁</h3>
+            <p class="menu-item-desc">鸡肉鲜嫩，花生酥脆，麻辣鲜香一口到位</p>
+            <span class="menu-item-price">¥38</span>
+          </div>
+        </div>
+        <div class="menu-item" data-category="main">
+          <div class="menu-item-img img-tofu"></div>
+          <div class="menu-item-info">
+            <h3>麻婆豆腐</h3>
+            <p class="menu-item-desc">正宗四川做法，麻辣鲜香嫩，下饭神器</p>
+            <span class="menu-item-price">¥28</span>
+          </div>
+        </div>
+        <div class="menu-item" data-category="main">
+          <div class="menu-item-img img-beef"></div>
+          <div class="menu-item-info">
+            <h3>水煮牛肉</h3>
+            <p class="menu-item-desc">牛肉嫩滑，麻辣过瘾，配上一碗米饭绝了</p>
+            <span class="menu-item-price">¥58</span>
+          </div>
+        </div>
+
+        <!-- 汤品 -->
+        <div class="menu-item" data-category="soup">
+          <div class="menu-item-img img-soup-chicken"></div>
+          <div class="menu-item-info">
+            <h3>老鸡汤</h3>
+            <p class="menu-item-desc">散养老母鸡慢炖四小时，汤浓味鲜</p>
+            <span class="menu-item-price">¥38</span>
+          </div>
+        </div>
+        <div class="menu-item" data-category="soup">
+          <div class="menu-item-img img-soup-rib"></div>
+          <div class="menu-item-info">
+            <h3>排骨莲藕汤</h3>
+            <p class="menu-item-desc">湖北洪湖粉藕，配上精选小排，清甜浓郁</p>
+            <span class="menu-item-price">¥42</span>
+          </div>
+        </div>
+
+        <!-- 小吃甜品 -->
+        <div class="menu-item" data-category="dessert">
+          <div class="menu-item-img img-dumpling"></div>
+          <div class="menu-item-info">
+            <h3>手工水饺</h3>
+            <p class="menu-item-desc">每日现包，皮薄馅大，有猪肉白菜和韭菜鸡蛋两种</p>
+            <span class="menu-item-price">¥22</span>
+          </div>
+        </div>
+        <div class="menu-item" data-category="dessert">
+          <div class="menu-item-img img-cake"></div>
+          <div class="menu-item-info">
+            <h3>红糖糍粑</h3>
+            <p class="menu-item-desc">现炸糯米糍粑，裹上黄豆粉淋上红糖，甜而不腻</p>
+            <span class="menu-item-price">¥18</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== 环境展示 ========== -->
+  <section id="gallery" class="gallery section">
+    <div class="container">
+      <div class="section-header">
+        <h2>用餐环境</h2>
+        <p class="section-subtitle">舒适温馨的环境，让每一餐都成为享受</p>
+      </div>
+      <div class="gallery-grid">
+        <div class="gallery-item gallery-1"><span>🏠 大厅</span></div>
+        <div class="gallery-item gallery-2"><span>🍽️ 包间</span></div>
+        <div class="gallery-item gallery-3"><span>🌿 户外区</span></div>
+        <div class="gallery-item gallery-4"><span>🪑 雅座</span></div>
+        <div class="gallery-item gallery-5"><span>🍳 明厨亮灶</span></div>
+        <div class="gallery-item gallery-6"><span>🎉 聚会区</span></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== 预约表单 ========== -->
+  <section id="reserve" class="reserve section">
+    <div class="container">
+      <div class="section-header">
+        <h2>在线预约</h2>
+        <p class="section-subtitle">提前预约，免去排队等候的烦恼</p>
+      </div>
+      <div class="reserve-grid">
+        <form class="reserve-form" id="reserveForm">
+          <div class="form-group">
+            <label for="name">您的姓名 *</label>
+            <input type="text" id="name" name="name" placeholder="请输入姓名" required>
+          </div>
+          <div class="form-group">
+            <label for="phone">联系电话 *</label>
+            <input type="tel" id="phone" name="phone" placeholder="请输入手机号" required>
+          </div>
+          <div class="form-group">
+            <label for="date">预约日期 *</label>
+            <input type="date" id="date" name="date" required>
+          </div>
+          <div class="form-group">
+            <label for="time">预约时间 *</label>
+            <select id="time" name="time" required>
+              <option value="">请选择时间</option>
+              <option value="11:00">11:00</option>
+              <option value="11:30">11:30</option>
+              <option value="12:00">12:00</option>
+              <option value="12:30">12:30</option>
+              <option value="17:00">17:00</option>
+              <option value="17:30">17:30</option>
+              <option value="18:00">18:00</option>
+              <option value="18:30">18:30</option>
+              <option value="19:00">19:00</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="guests">用餐人数 *</label>
+            <select id="guests" name="guests" required>
+              <option value="">请选择人数</option>
+              <option value="1">1人</option>
+              <option value="2">2人</option>
+              <option value="3">3-4人</option>
+              <option value="5">5-6人</option>
+              <option value="7">7-10人</option>
+              <option value="10">10人以上</option>
+            </select>
+          </div>
+          <div class="form-group full-width">
+            <label for="message">特殊需求</label>
+            <textarea id="message" name="message" rows="3" placeholder="如有忌口、过敏、生日布置等特殊需求请注明"></textarea>
+          </div>
+          <button type="submit" class="btn btn-primary btn-block">提交预约</button>
+          <p class="form-success" id="formSuccess">✅ 预约已提交！我们会尽快电话确认，请保持手机畅通。</p>
+        </form>
+
+        <div class="reserve-info">
+          <div class="info-card">
+            <h3>🕐 营业时间</h3>
+            <p>午餐：11:00 - 14:00</p>
+            <p>晚餐：17:00 - 21:30</p>
+            <p class="info-note">每周一休息</p>
+          </div>
+          <div class="info-card">
+            <h3>📍 餐厅地址</h3>
+            <p>XX市XX区美食街88号</p>
+            <p>（地铁2号线美食街站A出口步行200米）</p>
+            <div class="map-placeholder">
+              🗺️ 地图加载区域
+            </div>
+          </div>
+          <div class="info-card">
+            <h3>📞 联系电话</h3>
+            <p>订餐热线：138-XXXX-XXXX</p>
+            <p>团餐咨询：139-XXXX-XXXX</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== 页脚 ========== -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-col">
+          <h3>🍽️ 味来餐厅</h3>
+          <p>地道家常菜，用心做好每一餐。</p>
+          <p>二十多年来，我们始终相信——最好吃的菜，是让人想起家的那道菜。</p>
+        </div>
+        <div class="footer-col">
+          <h3>快速导航</h3>
+          <ul>
+            <li><a href="#home">首页</a></li>
+            <li><a href="#about">关于我们</a></li>
+            <li><a href="#menu">菜品推荐</a></li>
+            <li><a href="#gallery">环境展示</a></li>
+            <li><a href="#contact">联系我们</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h3>联系我们</h3>
+          <p>📍 XX市XX区美食街88号</p>
+          <p>📞 138-XXXX-XXXX</p>
+          <p>🕐 11:00-14:00 / 17:00-21:30</p>
+        </div>
+        <div class="footer-col">
+          <h3>关注我们</h3>
+          <div class="qrcode-placeholder">📱 微信公众号二维码</div>
+          <p>扫码关注，获取最新优惠</p>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2024 味来餐厅 版权所有 | 这个网站由 [你的名字] 制作</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

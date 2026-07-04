@@ -1,0 +1,653 @@
+/* ========================================
+   味来餐厅 - 样式表
+   这是你学习 CSS 的最佳教材
+   每个区块我都加了注释，告诉你它管什么
+   ======================================== */
+
+/* ---------- 1. 基础设置 ---------- */
+/* 这些是全局样式，整个网站都会用到 */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  /* box-sizing: border-box 让宽度包含边框和内边距，
+     这样布局计算更容易。记住这个——几乎所有项目都会用 */
+}
+
+html {
+  scroll-behavior: smooth;
+  /* 点击导航链接时平滑滚动 */
+}
+
+body {
+  font-family: "Microsoft YaHei", "PingFang SC", "Helvetica Neue", sans-serif;
+  line-height: 1.6;
+  color: #333;
+  background: #fff;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+  /* 居中容器，所有内容区的标配 */
+}
+
+.section {
+  padding: 80px 0;
+  /* 每个区块的上下间距 */
+}
+
+.section-header {
+  text-align: center;
+  margin-bottom: 50px;
+}
+
+.section-header h2 {
+  font-size: 2.2rem;
+  color: #2d1b0e;
+  margin-bottom: 10px;
+  position: relative;
+  display: inline-block;
+}
+
+.section-header h2::after {
+  content: '';
+  display: block;
+  width: 60px;
+  height: 3px;
+  background: #e8782a;
+  margin: 12px auto 0;
+  border-radius: 2px;
+  /* 标题下面的橙色装饰线，细节决定质感 */
+}
+
+.section-subtitle {
+  color: #888;
+  font-size: 1.05rem;
+  margin-top: 8px;
+}
+
+/* ---------- 2. 导航栏 ---------- */
+.navbar {
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(10px);
+  /* 毛玻璃效果，高级 */
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  box-shadow: 0 2px 20px rgba(0, 0, 0, 0.08);
+}
+
+.navbar .container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 20px;
+}
+
+.logo {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #2d1b0e;
+  text-decoration: none;
+}
+
+.nav-links {
+  display: flex;
+  list-style: none;
+  gap: 30px;
+}
+
+.nav-links a {
+  text-decoration: none;
+  color: #555;
+  font-size: 0.95rem;
+  transition: color 0.3s;
+  /* transition 让颜色变化有动画，用户体验好 */
+}
+
+.nav-links a:hover {
+  color: #e8782a;
+}
+
+/* ---------- 3. 按钮 ---------- */
+/* 做成通用的，全站按钮风格统一 */
+.btn {
+  display: inline-block;
+  padding: 12px 28px;
+  border-radius: 6px;
+  text-decoration: none;
+  font-size: 0.95rem;
+  font-weight: 600;
+  cursor: pointer;
+  border: none;
+  transition: all 0.3s;
+}
+
+.btn-primary {
+  background: #e8782a;
+  color: #fff;
+}
+
+.btn-primary:hover {
+  background: #d0651f;
+  transform: translateY(-2px);
+  /* 鼠标悬停微微上浮，这是很常见的交互效果 */
+  box-shadow: 0 8px 25px rgba(232, 120, 42, 0.35);
+}
+
+.btn-outline {
+  border: 2px solid #fff;
+  color: #fff;
+}
+
+.btn-outline:hover {
+  background: #fff;
+  color: #e8782a;
+}
+
+.btn-nav {
+  background: #e8782a;
+  color: #fff;
+  padding: 8px 20px;
+  font-size: 0.9rem;
+}
+
+.btn-nav:hover {
+  background: #d0651f;
+}
+
+.btn-block {
+  display: block;
+  width: 100%;
+  padding: 14px;
+  font-size: 1.05rem;
+}
+
+/* ---------- 4. 首页大图（Hero Section）---------- */
+/* 这是用户打开网站第一眼看到的，必须震撼 */
+.hero {
+  height: 90vh;
+  /* 占屏幕90%高度 */
+  min-height: 600px;
+  background: linear-gradient(135deg, #2d1b0e, #5c3a1e, #8b5a2b);
+  /* 渐变色背景，模拟食物色系 */
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+.hero-overlay {
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%;
+  height: 100%;
+  background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><circle cx="20" cy="20" r="1" fill="rgba(255,255,255,0.1)"/><circle cx="80" cy="40" r="1.5" fill="rgba(255,255,255,0.08)"/><circle cx="50" cy="70" r="1" fill="rgba(255,255,255,0.1)"/><circle cx="90" cy="80" r="0.8" fill="rgba(255,255,255,0.06)"/></svg>');
+  /* SVG 生成的装饰性圆点纹理，不用图片也能做出质感 */
+}
+
+.hero-content {
+  position: relative;
+  z-index: 1;
+  color: #fff;
+  max-width: 700px;
+  padding: 0 20px;
+}
+
+.hero-content h1 {
+  font-size: 3rem;
+  margin-bottom: 20px;
+  line-height: 1.3;
+  animation: fadeInUp 1s ease;
+  /* 页面加载时从下往上淡入 */
+}
+
+.hero-content p {
+  font-size: 1.2rem;
+  margin-bottom: 35px;
+  opacity: 0.9;
+  animation: fadeInUp 1s ease 0.2s both;
+  /* 0.2s 延迟，让文字比标题稍晚出现 */
+}
+
+.hero-buttons {
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+  flex-wrap: wrap;
+  animation: fadeInUp 1s ease 0.4s both;
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  /* 定义淡入上升动画 */}
+
+/* ---------- 5. 关于我们 ---------- */
+.about {
+  background: #fdfaf7;
+}
+
+.about-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  /* CSS Grid：两列等宽布局 */
+  gap: 60px;
+  align-items: center;
+}
+
+.about-text h3 {
+  font-size: 1.6rem;
+  color: #2d1b0e;
+  margin-bottom: 15px;
+}
+
+.about-text p {
+  color: #666;
+  margin-bottom: 15px;
+  line-height: 1.8;
+}
+
+.about-stats {
+  display: flex;
+  gap: 40px;
+  margin-top: 30px;
+}
+
+.stat {
+  text-align: center;
+}
+
+.stat-number {
+  display: block;
+  font-size: 2rem;
+  font-weight: bold;
+  color: #e8782a;
+}
+
+.stat-label {
+  font-size: 0.85rem;
+  color: #999;
+}
+
+.about-image .image-placeholder {
+  background: linear-gradient(135deg, #f5e6d3, #e8d5c4);
+  height: 350px;
+  border-radius: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.2rem;
+  color: #b8956e;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.08);
+}
+
+/* ---------- 6. 菜品菜单 ---------- */
+.menu {
+  background: #fff;
+}
+
+/* 分类标签 */
+.menu-tabs {
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+  margin-bottom: 40px;
+  flex-wrap: wrap;
+}
+
+.menu-tab {
+  padding: 10px 24px;
+  border: 2px solid #e0d5c9;
+  background: #fff;
+  border-radius: 30px;
+  cursor: pointer;
+  font-size: 0.95rem;
+  color: #666;
+  transition: all 0.3s;
+}
+
+.menu-tab:hover {
+  border-color: #e8782a;
+  color: #e8782a;
+}
+
+.menu-tab.active {
+  background: #e8782a;
+  color: #fff;
+  border-color: #e8782a;
+}
+
+/* 菜品网格 */
+.menu-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  /* auto-fill + minmax：自动适配屏幕宽度，响应式布局的核心技巧 */
+  gap: 25px;
+}
+
+.menu-item {
+  background: #fff;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.06);
+  transition: all 0.3s;
+  cursor: pointer;
+}
+
+.menu-item:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 12px 35px rgba(0, 0, 0, 0.12);
+}
+
+.menu-item-img {
+  height: 180px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 3rem;
+}
+
+/* 菜品图片区（用渐变色+emoji模拟，真实项目换成照片） */
+.img-red-braised   { background: linear-gradient(135deg, #c0392b, #e74c3c); }  /* 红烧肉 */
+.img-sweet-sour    { background: linear-gradient(135deg, #e67e22, #f39c12); }  /* 糖醋里脊 */
+.img-fish           { background: linear-gradient(135deg, #bdc3c7, #ecf0f1); }  /* 清蒸鱼 */
+.img-kungpao        { background: linear-gradient(135deg, #d35400, #e67e22); }  /* 宫保鸡丁 */
+.img-tofu           { background: linear-gradient(135deg, #e74c3c, #c0392b); }  /* 麻婆豆腐 */
+.img-beef           { background: linear-gradient(135deg, #a93226, #e74c3c); }  /* 水煮牛肉 */
+.img-soup-chicken   { background: linear-gradient(135deg, #f5cba7, #e8b878); }   /* 老鸡汤 */
+.img-soup-rib       { background: linear-gradient(135deg, #e8d5b7, #d4b896); }   /* 排骨汤 */
+.img-dumpling       { background: linear-gradient(135deg, #f0e6d3, #e8d8c0); }   /* 水饺 */
+.img-cake           { background: linear-gradient(135deg, #d4a574, #c9956b); }   /* 红糖糍粑 */
+
+.menu-item-info {
+  padding: 18px;
+}
+
+.menu-item-info h3 {
+  font-size: 1.15rem;
+  color: #2d1b0e;
+  margin-bottom: 6px;
+}
+
+.menu-item-desc {
+  color: #999;
+  font-size: 0.88rem;
+  margin-bottom: 10px;
+}
+
+.menu-item-price {
+  font-size: 1.3rem;
+  font-weight: bold;
+  color: #e8782a;
+}
+
+/* ---------- 7. 环境展示 ---------- */
+.gallery {
+  background: #fdfaf7;
+}
+
+.gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 15px;
+}
+
+.gallery-item {
+  height: 220px;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.1rem;
+  color: #fff;
+  font-weight: bold;
+  transition: transform 0.3s;
+  cursor: pointer;
+}
+
+.gallery-item:hover {
+  transform: scale(1.03);
+}
+
+.gallery-1 { background: linear-gradient(135deg, #5c3a1e, #8b5a2b); }
+.gallery-2 { background: linear-gradient(135deg, #c0392b, #a93226); }
+.gallery-3 { background: linear-gradient(135deg, #27ae60, #2ecc71); }
+.gallery-4 { background: linear-gradient(135deg, #8b5a2b, #a0522d); }
+.gallery-5 { background: linear-gradient(135deg, #2c3e50, #34495e); }
+.gallery-6 { background: linear-gradient(135deg, #e8782a, #d0651f); }
+
+/* 让第一张和最后一张图跨两列（打破呆板布局） */
+.gallery-1 { grid-column: span 2; }
+.gallery-6 { grid-column: span 2; }
+
+/* ---------- 8. 预约表单 ---------- */
+.reserve {
+  background: #fff;
+}
+
+.reserve-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 50px;
+  align-items: start;
+}
+
+.reserve-form {
+  background: #fdfaf7;
+  padding: 35px;
+  border-radius: 16px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+  box-shadow: 0 5px 30px rgba(0, 0, 0, 0.05);
+}
+
+.form-group.full-width {
+  grid-column: span 2;
+  /* 让备注栏占满整行 */}
+
+.form-group label {
+  display: block;
+  margin-bottom: 6px;
+  font-weight: 600;
+  font-size: 0.9rem;
+  color: #555;
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+  width: 100%;
+  padding: 12px 15px;
+  border: 1.5px solid #e0d5c9;
+  border-radius: 8px;
+  font-size: 0.95rem;
+  font-family: inherit;
+  transition: border-color 0.3s;
+  background: #fff;
+}
+
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+  outline: none;
+  border-color: #e8782a;
+  box-shadow: 0 0 0 3px rgba(232, 120, 42, 0.1);
+  /* focus 状态：橙色边框 + 淡淡的光晕，让用户知道当前在输入这里 */
+}
+
+.form-success {
+  display: none;
+  color: #27ae60;
+  text-align: center;
+  font-weight: 600;
+  margin-top: 5px;
+  grid-column: span 2;
+}
+
+.form-success.show {
+  display: block;
+}
+
+/* 预约信息卡片 */
+.info-card {
+  background: #fdfaf7;
+  padding: 25px;
+  border-radius: 12px;
+  margin-bottom: 20px;
+  border-left: 4px solid #e8782a;
+}
+
+.info-card h3 {
+  margin-bottom: 10px;
+  color: #2d1b0e;
+}
+
+.info-card p {
+  color: #666;
+  margin-bottom: 5px;
+}
+
+.info-note {
+  color: #e8782a !important;
+  font-weight: 600;
+}
+
+.map-placeholder {
+  background: #e8d5c4;
+  height: 150px;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #b8956e;
+  margin-top: 10px;
+}
+
+/* ---------- 9. 页脚 ---------- */
+.footer {
+  background: #2d1b0e;
+  color: #b8956e;
+  padding: 50px 0 20px;
+}
+
+.footer-grid {
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr 1fr;
+  gap: 40px;
+  margin-bottom: 40px;
+}
+
+.footer-col h3 {
+  color: #fff;
+  font-size: 1.1rem;
+  margin-bottom: 15px;
+}
+
+.footer-col p {
+  margin-bottom: 8px;
+  font-size: 0.9rem;
+}
+
+.footer-col ul {
+  list-style: none;
+}
+
+.footer-col ul li {
+  margin-bottom: 8px;
+}
+
+.footer-col ul a {
+  color: #b8956e;
+  text-decoration: none;
+  transition: color 0.3s;
+}
+
+.footer-col ul a:hover {
+  color: #e8782a;
+}
+
+.qrcode-placeholder {
+  background: #fdfaf7;
+  width: 120px;
+  height: 120px;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #999;
+  font-size: 0.8rem;
+  margin-bottom: 10px;
+}
+
+.footer-bottom {
+  text-align: center;
+  padding-top: 20px;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  font-size: 0.85rem;
+}
+
+.footer-bottom p {
+  color: #8b7355;
+}
+
+/* ---------- 10. 响应式设计（手机适配）---------- */
+/* 屏幕宽度小于 768px 时自动调整布局 */
+@media (max-width: 768px) {
+  .nav-links {
+    display: none;
+    /* 手机上隐藏导航链接（实际项目可加汉堡菜单） */  }
+
+  .hero-content h1 {
+    font-size: 2rem;
+  }
+
+  .about-grid,
+  .reserve-grid {
+    grid-template-columns: 1fr;
+    /* 两列变一列 */  }
+
+  .about-stats {
+    gap: 20px;
+  }
+
+  .menu-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .gallery-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .gallery-1,
+  .gallery-6 {
+    grid-column: span 1;
+  }
+
+  .footer-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .reserve-form {
+    grid-template-columns: 1fr;
+  }
+
+  .form-group.full-width {
+    grid-column: span 1;
+  }
+
+  .section {
+    padding: 50px 0;
+  }
+}
