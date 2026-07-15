@@ -1,0 +1,29 @@
+# GitHub Pages 自动部署配置
+# 每次推送代码，GitHub 自动把网站部署上线
+name: Deploy to GitHub Pages
+
+on:
+  push:
+    branches: [main]  # 当你推送代码到 main 分支时自动触发
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      pages: write
+      id-token: write
+    steps:
+      - name: 检出代码
+        uses: actions/checkout@v4
+
+      - name: 设置 Pages
+        uses: actions/configure-pages@v4
+
+      - name: 上传文件
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: '.'  # 把整个仓库文件上传
+
+      - name: 部署到 GitHub Pages
+        uses: actions/deploy-pages@v4
